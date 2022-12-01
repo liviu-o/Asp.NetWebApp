@@ -1,4 +1,5 @@
 using Asp.NetEmpty.Models;
+using Asp.NetEmpty.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Asp.NetEmpty.Controllers
@@ -16,7 +17,14 @@ namespace Asp.NetEmpty.Controllers
 
         public IActionResult List()
         {
-            return View(_pieRepository.AllPies);
+            //Without View Model
+            // ViewBag.CurrentCategory = "Cheese cakes";
+            // return View(_pieRepository.AllPies);
+
+            //With ViewModel
+            PieListViewModel pieListViewModel = new PieListViewModel
+            (_pieRepository.AllPies, "Cheese cakes");
+        return View(pieListViewModel);
         }
     }
 }

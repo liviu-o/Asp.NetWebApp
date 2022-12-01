@@ -1,4 +1,7 @@
-@model IEnumerable<Asp.NetEmpty.Models.Pie>
+@model Asp.NetEmpty.ViewModels.PieListViewModel
+
+@* Without ViewModel *@
+@* @model IEnumerable<Asp.NetEmpty.Models.Pie> *@
 
 <!DOCTYPE html>
 <html lang="en">
@@ -9,7 +12,8 @@
     <title>Document</title>
 </head>
 <body>
-    @foreach (var pie in Model)
+    <h1>@Model.CurrentCategory</h1>
+    @foreach (var pie in Model.Pies)
     {
         <div>
             <h2>@pie.Name</h2>
