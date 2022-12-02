@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Asp.NetEmpty.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20221202095026_InitialCreate")]
+    [Migration("20221202101548_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -41,7 +41,7 @@ namespace Asp.NetEmpty.Migrations
 
                     b.HasKey("CateGoryId");
 
-                    b.ToTable("Categoties");
+                    b.ToTable("Categories");
                 });
 
             modelBuilder.Entity("Asp.NetEmpty.Models.Pie", b =>

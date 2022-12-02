@@ -13,7 +13,7 @@ namespace Asp.NetEmpty.Models
             
         }
 
-        public DbSet<Category> Categoties { get; set; }
+        public DbSet<Category> Categories { get; set; }
         public DbSet<Pie> Pies { get; set; }
     }
 }

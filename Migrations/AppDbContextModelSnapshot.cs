@@ -38,7 +38,7 @@ namespace Asp.NetEmpty.Migrations
 
                     b.HasKey("CateGoryId");
 
-                    b.ToTable("Categoties");
+                    b.ToTable("Categories");
                 });
 
             modelBuilder.Entity("Asp.NetEmpty.Models.Pie", b =>

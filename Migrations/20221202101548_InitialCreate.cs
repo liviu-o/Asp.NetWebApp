@@ -11,7 +11,7 @@ namespace Asp.NetEmpty.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Categoties",
+                name: "Categories",
                 columns: table => new
                 {
                     CateGoryId = table.Column<int>(type: "int", nullable: false)
@@ -21,7 +21,7 @@ namespace Asp.NetEmpty.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Categoties", x => x.CateGoryId);
+                    table.PrimaryKey("PK_Categories", x => x.CateGoryId);
                 });
 
             migrationBuilder.CreateTable(
@@ -45,9 +45,9 @@ namespace Asp.NetEmpty.Migrations
                 {
                     table.PrimaryKey("PK_Pies", x => x.PieId);
                     table.ForeignKey(
-                        name: "FK_Pies_Categoties_CategoryId",
+                        name: "FK_Pies_Categories_CategoryId",
                         column: x => x.CategoryId,
-                        principalTable: "Categoties",
+                        principalTable: "Categories",
                         principalColumn: "CateGoryId",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -65,7 +65,7 @@ namespace Asp.NetEmpty.Migrations
                 name: "Pies");
 
             migrationBuilder.DropTable(
-                name: "Categoties");
+                name: "Categories");
         }
     }
 }

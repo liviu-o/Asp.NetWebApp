@@ -12,6 +12,6 @@ namespace Asp.NetEmpty.Models
         }
 
         IEnumerable<Category> ICategoryRepository.AllCategories => 
-        _appDbContext.Categoties.OrderBy(p => p.CategoryName);
+        _appDbContext.Categories.OrderBy(p => p.CategoryName);
     }
 }
