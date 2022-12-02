@@ -23,7 +23,7 @@ namespace Asp.NetEmpty.Controllers
 
             //With ViewModel
             PieListViewModel pieListViewModel = new PieListViewModel
-            (_pieRepository.AllPies, "Cheese cakes");
+            (_pieRepository.AllPies, "All pies");
         return View(pieListViewModel);
         }
 
