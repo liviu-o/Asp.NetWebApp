@@ -15,16 +15,29 @@ namespace Asp.NetEmpty.Controllers
             _categoryRepository = categoryRepository;
         }
 
-        public IActionResult List()
+        public IActionResult List(string category)
         {
             //Without View Model
             // ViewBag.CurrentCategory = "Cheese cakes";
             // return View(_pieRepository.AllPies);
 
             //With ViewModel
-            PieListViewModel pieListViewModel = new PieListViewModel
-            (_pieRepository.AllPies, "All pies");
-        return View(pieListViewModel);
+
+            IEnumerable<Pie> pies;
+            string? currentCategory;
+
+            if(string.IsNullOrEmpty(category))
+            {
+                pies = _pieRepository.AllPies.OrderBy(p => p.PieId);
+                currentCategory = "All pies";
+            }
+            else 
+            {
+                pies = _pieRepository.AllPies.OrderBy(p => p.Category.CategoryName == category)
+                .OrderBy(p => p.PieId);
+                currentCategory = _categoryRepository.AllCategories.FirstOrDefault(c => c.CategoryName == category)?.CategoryName;
+            }
+         return View(new PieListViewModel(pies, currentCategory));
         }
 
         public IActionResult Details(int id)
