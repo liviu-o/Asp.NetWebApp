@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Asp.NetEmpty.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Asp.NetEmpty.Controllers
 {
+    [Authorize]
     public class OrderController : Controller
     {
         private readonly IOrderRepository _orderRepository;

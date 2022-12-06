@@ -9,7 +9,7 @@ namespace Asp.NetEmpty.Models
 {
     public class Order
     {
-          [BindNever]
+        [BindNever]
         public int OrderId { get; set; }
 
         public List<OrderDetail>? OrderDetails { get; set; }
@@ -41,7 +41,6 @@ namespace Asp.NetEmpty.Models
         [StringLength(50)]
         public string City { get; set; } = string.Empty;
 
-        [StringLength(10)]
         public string? State { get; set; }
 
         [Required(ErrorMessage = "Please enter your country")]
