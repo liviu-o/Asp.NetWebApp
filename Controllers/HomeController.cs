@@ -13,10 +13,12 @@ namespace Asp.NetEmpty.Controllers
             _pieRepository = pieRepository;
         }
 
-        public IActionResult Index()
+        public ViewResult Index()
         {
             var piesOfTheWeek = _pieRepository.PiesOfTheWeek;
+
             var homeViewModel = new HomeViewModel(piesOfTheWeek);
+
             return View(homeViewModel);
         }
     }
